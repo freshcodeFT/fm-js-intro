@@ -1,7 +1,3 @@
-let data = '';
+const hello = "Маша сказала: \\ \n \"Привет\"";
 
-if(data){
-  console.log("Success");
-} else {
-  console.log("Access denied");
-}
+console.log(hello);

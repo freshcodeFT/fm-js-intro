@@ -2,19 +2,14 @@
 
 // alert(userInput);
 
+const userInput1 = prompt("Enter number 1: ");
+const userInput2 = prompt("Enter number 2: ");
 
-mySecondFunc();
-myFirstFunc();
 
-const myFirstFunc = function(){
-  console.log("1");
+const getSumOfTwo = function(val1, val2){
+  const result = Number(val1) + Number(val2);
+  return isNaN(result) ? null : result;
 }
 
-function mySecondFunc(){
-  console.log("2");
-}
-
-
-
-// console.log(myFirstFunc);
-// console.log(mySecondFunc);
+const sum = getSumOfTwo(userInput1, userInput2);
+console.log(sum);

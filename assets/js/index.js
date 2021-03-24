@@ -2,16 +2,16 @@
 
 // alert(userInput);
 
-const userInput1 = prompt("Enter number 1: ");
-const userInput2 = prompt("Enter number 2: ");
+// const userInput1 = prompt("Enter number 1: ");
+// const userInput2 = prompt("Enter number 2: ");
 
-const getSumOfTwo = function(val1, val2){
-  const result = Number(val1) + Number(val2);
-  return isNaN(result) ? null : result;
-}
+// const getSumOfTwo = function(val1, val2){
+//   const result = Number(val1) + Number(val2);
+//   return isNaN(result) ? null : result;
+// }
 
-const sum = getSumOfTwo(userInput1, userInput2);
-console.log(sum);
+// const sum = getSumOfTwo(userInput1, userInput2);
+// console.log(sum);
 
 
 /*
@@ -25,6 +25,13 @@ console.log(sum);
   (*4. Функция, которая решает квадратные уравнения)
 */
 
+/**
+ * Solves quadric equations
+ * @param {number} a
+ * @param {number} b 
+ * @param {number} c 
+ * @returns {false | null | [number, number]} - returns false on invalid input
+ */
 function quadricEquation(a, b, c){
   if( isNaN(a - b - c) ) return false;
   if(a === 0) return null;

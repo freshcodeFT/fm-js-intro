@@ -1,27 +1,37 @@
 'use strict';
-let global1 = 5;
-let global2 = 5;
 
-console.log(test('test: msg'));
-console.log(deterministic('determ: msg',global2));
+let numA = +prompt("Write a: ");
+let numB = +prompt("Write b: ");
 
-console.log(test('test: msg'));
-console.log(deterministic('determ: msg',global2));
-
-global1 *= 2;
-global2 *= 2;
-
-console.log(test('test: msg'));
-console.log(deterministic('determ: msg',global2));
-
-//func declaration
-function test(msg) {
-  const result = global1 += 2;
-  return msg + result;
+//pure func
+function sum(a, b){
+  return a + b;
 }
 
-
-function deterministic(msg, local){
-  const result = local += 2;
-  return msg + result;
+//pure func
+function sub(a, b){
+  return a - b;
 }
+
+//pure func
+function mul(a, b){
+  return a * b;
+}
+
+//pure func
+function div(a, b){
+  return a / b;
+}
+
+function sum2(){
+  return numA + numB;
+}
+
+console.log(sum(numA, numB));
+console.log(sum2());
+
+numA = +prompt("Write a: ");
+numB = +prompt("Write b: ");
+
+console.log(sum(numA,numB));
+console.log(sum2());

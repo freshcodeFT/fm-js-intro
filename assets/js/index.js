@@ -23,15 +23,9 @@ function div(a, b){
   return a / b;
 }
 
-function sum2(){
-  return numA + numB;
+const highOrderFunc = function (a, b, operationFunc){
+  const result = operationFunc(a, b);
+  return result;
 }
 
-console.log(sum(numA, numB));
-console.log(sum2());
-
-numA = +prompt("Write a: ");
-numB = +prompt("Write b: ");
-
-console.log(sum(numA,numB));
-console.log(sum2());
+console.log(highOrderFunc(numA, numB, div));

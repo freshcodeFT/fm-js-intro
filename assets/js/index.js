@@ -23,9 +23,9 @@ function div(a, b){
   return a / b;
 }
 
-const highOrderFunc = function (a, b, operationFunc){
-  const result = operationFunc(a, b);
+const highOrderFunc = function (valA, valB, operationFunc){
+  const result = operationFunc(valA, valB);
   return result;
 }
-
-console.log(highOrderFunc(numA, numB, div));
+const countedValue = highOrderFunc(numA, numB, mul);
+console.log("Result: ", countedValue);

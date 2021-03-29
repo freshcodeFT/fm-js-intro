@@ -1,9 +1,17 @@
-"use strict";
+'use strict';
 
-while(false){
-  console.log(1);
+const cat = {
+  name: 'Murzik',
+  color: 'black',
+  breed: 'Sphinx',
+  isSleeping: true,
+  isMale: true,
+  run: function(){
+    console.log('I\'m running!!!');
+  }
 }
+cat.isSleeping = false;
+cat.color = 'white';
 
-do{
-  console.log(2);
-} while (false);
+
+console.log(cat.isSleeping);

@@ -12,6 +12,8 @@ const cat = {
 }
 cat.isSleeping = false;
 cat.color = 'white';
+// cat.breed = undefined;
+delete cat.breed;
 
 
 console.log(cat.isSleeping);

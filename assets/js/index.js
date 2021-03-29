@@ -15,5 +15,12 @@ cat.color = 'white';
 // cat.breed = undefined;
 delete cat.breed;
 
+cat.meow = function(){
+  console.log("MEOW!");
+}
 
-console.log(cat.isSleeping);
+cat.age = 5;
+
+console.log(cat);
+
+cat.meow();

@@ -1,41 +1,15 @@
 'use strict';
+/*
+const a = +prompt('num1');
+const b = +prompt('num2');
 
-const cat = {
-  name: 'Murzik',
-  color: 'black',
-  age: 5,
-  breed: 'Sphinx',
-  isSleeping: true,
-  isMale: true,
-  run: function(){
-    console.log('I\'m running!!!');
-  },
-  meow: function(){
-    console.log("MEOW!");
-  },
-}
+alert(a + ' + ' + b + ' = ' + (a + b));
+*/
 
-const Cat = function(name, color, age, breed, isSleeping, isMale){
-  this.name = name;
-  this.furColor = color;
-  this.age = age;
-  this.breed = breed;
-  this.isSleeping = isSleeping;
-  this.isMale = isMale;
-  this.run = function(){
-    console.log('I\'m running!!!');
-  }
-  this.meow = function(){
-    return this.isSleeping ? 'Zzzzzzz...' : 'Meow!';
-  }
-  this.toggleSleep = function(){
-    this.isSleeping = !this.isSleeping;
-  }
-  this.incAge = function(){
-    this.age++;
-  }
-}
+console.log("tst \"sffdsfds\" fdgfd\n 'sdfsdfsd' ");
+console.log('sdfjksdf "sdfsdf" df\'gdf\n sdfsd');
 
-const cat1 = new Cat('Barsik', 'white', 3, 'Sphinx', false, true);
-
-cat1.meow();
+console.log(`ts't "test" ttt\`af lmf
+dnglk
+ dfg
+ df gdas`);

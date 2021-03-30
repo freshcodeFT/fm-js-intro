@@ -1,16 +1,31 @@
 'use strict';
 
-const a = +prompt('num1');
-const b = +prompt('num2');
+const user = {
+  firstName: 'Test',
+  lastName: 'Testovich',
+  age: 18,
+  isMale: true,
+  sayHello: function(){
+    alert(`Hello! My name is ${this.firstName} ${this.lastName}.`)
+  },
+  isAdult: function(){
+    return this.age >= 18;
+  },
+}
 
-//alert(a + ' + ' + b + ' = ' + (a + b));
-alert(`${a} + ${b} = ${a + b} `);
+const User = function(firstName, lastName, age, isMale){
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.age = age;
+  this.isMale = isMale;
 
+  this.sayHello = function(){
+    alert(`Hello! My name is ${this.firstName} ${this.lastName}.`)
+  }
+  this.isAdult = function(){
+    return this.age >= 18;
+  }
+}
 
-console.log("tst \"sffdsfds\" fdgfd\n 'sdfsdfsd' ");
-console.log('sdfjksdf "sdfsdf" df\'gdf\n sdfsd');
-
-console.log(`ts't "test" ttt\`af lmf
-dnglk
- dfg
- df gdas`);
+const user1 = new User("John", "Doe", 19, true);
+const user2 = new User("Elizabeth", "Smith", 17, false);

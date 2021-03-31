@@ -12,7 +12,9 @@ const userTels = {
 
 userTels[3] = '38000348394';
 
+const arrayTel = new Array('38089347595', '38042748374', '38454548376', '38000348394');
 const arr = ['38089347595', '38042748374', '38454548376', '38000348394'];
+
 arr[arr.length] = 'test';
 arr.push(2);
 arr.push(7,8,9,10);
@@ -24,12 +26,15 @@ console.log(arr);
 
 
 function MyArrayProto(){
-  this.push = function push(item) {
-    this[this.length++] = item;
+  this.push = function push() {
+    for (let i = 0; i < arguments.length; i++){
+      this[this.length++] = arguments[i];
+    }
     return this.length;
   }
   this.pop = function pop(){
-    // Исправить отрицательную длину массива
+    if(this.length === 0) return;
+
     const lastValue = this[this.length-1];
     delete this[--this.length];
     return lastValue;
@@ -38,6 +43,9 @@ function MyArrayProto(){
 
 function MyArray(){
   this.length = 0;
+  for (let i = 0; i < arguments.length; i++){
+    this.push(arguments[i]);
+  }
 }
 
 MyArray.prototype = new MyArrayProto();

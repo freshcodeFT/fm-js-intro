@@ -13,8 +13,10 @@ const userTels = {
 userTels[3] = '38000348394';
 
 const arr = ['38089347595', '38042748374', '38454548376', '38000348394'];
-arr[4] = 'test';
-
+arr[arr.length] = 'test';
+arr.push(2);
+arr.push(7,8,9,10);
 
 console.log(userTels);
 console.log(arr);
+

@@ -46,6 +46,16 @@ function MyArrayProto(){
     }
     return newArray;
   }
+  this.reverse = function reverse(){
+    const maxIndex = this.length - 1;
+    const middle = maxIndex / 2;
+    for(let i = 0; i < middle; i++){
+      const temp = this[i];
+      this[i] = this[maxIndex - i];
+      this[maxIndex - i] = temp;
+    }
+    return this;
+  }
   /**
    * 
    * @param {function} callback 
@@ -64,4 +74,7 @@ function MyArray(){
   }
 }
 MyArray.prototype = new MyArrayProto();
+MyArray.__proto__.isMyArray = function isMyArray(arr){
+  return arr instanceof MyArray;
+}
 

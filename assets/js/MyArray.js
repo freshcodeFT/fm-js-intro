@@ -12,6 +12,15 @@ function MyArrayProto(){
     delete this[--this.length];
     return lastValue;
   }
+  this.unshift = function unshift(){
+    for(let i = this.length - 1; i >= 0; i--){
+      this[i + arguments.length] = this[i];
+    }
+    for(let i = 0; i < arguments.length; i++){
+      this[i] = arguments[i];
+    }
+    return this.length += arguments.length;
+  }
   /**
    * 
    * @param {function} callback 

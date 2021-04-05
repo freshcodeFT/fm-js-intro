@@ -27,3 +27,5 @@ numsArray.forEach(square);
 numsMyAray.forEach(function(currentNumber, index, arr){
   arr[index] = square(currentNumber);
 });
+
+const myArray = new MyArray(1,2,3,4,5,6,7);

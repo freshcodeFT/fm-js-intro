@@ -65,6 +65,14 @@ function MyArrayProto(){
       callback(this[i], i, this);
     }
   }
+
+  this.map = function map(callback){
+    const newArray = new MyArray();
+    for( let i = 0; i < this.length; i++){
+      newArray.push(callback(this[i], i, this));
+    }
+    return newArray;
+  }
 }
 
 function MyArray(){
@@ -78,3 +86,4 @@ MyArray.__proto__.isMyArray = function isMyArray(arr){
   return arr instanceof MyArray;
 }
 
+console.dir(MyArray)

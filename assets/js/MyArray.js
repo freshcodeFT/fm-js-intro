@@ -88,6 +88,15 @@ function MyArrayProto() {
     }
     return true;
   };
+  this.filter = function filter(callback){
+    const newArray = new MyArray();
+    for (let i = 0; i < this.length; i++) {
+      if(callback(this[i], i, this)){
+        newArray.push(this[i]);
+      }
+    }
+    return newArray;
+  }
 }
 
 function MyArray() {

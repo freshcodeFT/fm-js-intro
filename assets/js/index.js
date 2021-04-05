@@ -26,10 +26,14 @@ function isEven(num) {
   return num % 2 === 0;
 }
 
+function isOdd(num) {
+  return num % 2 !== 0;
+}
+
 numsArray.forEach(square);
 numsMyAray.forEach(function (currentNumber, index, arr) {
   arr[index] = square(currentNumber);
 });
 
 //const myArray = new MyArray(1, 2, 3, 4, 5, 6, 7, 8);
-const myArray = new MyArray(1, 3, 5, 7);
+const myArray = new MyArray(1, 2, 3, 4, 5, 7);

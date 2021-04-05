@@ -30,6 +30,22 @@ function MyArrayProto(){
     delete this[--this.length];
     return firstElem;
   }
+  this.concat = function concat(){
+    const newArray = new MyArray();
+    for(let i = 0; i < this.length; i++){
+      newArray.push(this[i]);
+    }
+    for(let i = 0; i < arguments.length; i++){
+      if(MyArray.isMyArray(arguments[i]) || Array.isArray(arguments[i])){
+        for(let j = 0; j < arguments[i].length; j++){
+          newArray.push(arguments[i][j]);
+        }
+      } else {
+        newArray.push(arguments[i]);
+      }
+    }
+    return newArray;
+  }
   /**
    * 
    * @param {function} callback 

@@ -21,6 +21,15 @@ function MyArrayProto(){
     }
     return this.length += arguments.length;
   }
+  this.shift = function shift(){
+    if(this.length === 0) return;
+    const firstElem = this[0];
+    for(let i = 0; i < this.length - 1; i++){
+      this[i] = this[i + 1]
+    }
+    delete this[--this.length];
+    return firstElem;
+  }
   /**
    * 
    * @param {function} callback 

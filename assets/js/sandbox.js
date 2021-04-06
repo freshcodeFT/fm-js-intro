@@ -16,12 +16,12 @@ function withLog(fn){
   }
 }
 
-const sumWithLog = withLog(sum);
+/*const sumWithLog = withLog(sum);
 
 const getFullName = function(name, surname){
   return `${name} ${surname}`
 }
 
-const getFullNameWithLog = withLog(getFullName);
+const getFullNameWithLog = withLog(getFullName);*/
 
 //const res = getFullNameWithLog('John', 'Smith');

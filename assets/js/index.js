@@ -1,13 +1,20 @@
 "use strict";
 
-const newsPaper = {
-  title: 'FC daily',
-  articles: ['Test123', 'Something', 'Nothing', 'Everything'],
-  showArticles(){
-    const that = this;
-    this.articles.forEach(function logItem(item, index){
-      console.log(that);
-      console.log(`${that.title}\n№${index+1}: ${item}`);
-    })
+const t1 = function(){
+  console.log(arguments);
+}
+
+const t2 = () => {
+  console.log(arguments); // error. arguments is not defined
+}
+
+t1(1,2,3,4,5)
+// t2(1,2,3,4,5)
+
+function sum(){
+  let res = null;
+  for(let i = 0; i < arguments.length; i++){
+    res += arguments[i];
   }
+  return res;
 }

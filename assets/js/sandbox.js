@@ -8,10 +8,6 @@ function saySomething(how, whatToSay){
   how(whatToSay);
 }
 
-function sum(a,b){
-  return a + b;
-}
-
 function withLog(fn){
   return function(...args){
     const result = fn(...args);

@@ -110,4 +110,4 @@ MyArray.__proto__.isMyArray = function isMyArray(arr) {
   return arr instanceof MyArray;
 };
 
-console.dir(MyArray);
+//console.dir(MyArray);

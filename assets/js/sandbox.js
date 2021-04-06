@@ -28,4 +28,4 @@ const getFullName = function(name, surname){
 
 const getFullNameWithLog = withLog(getFullName);
 
-const res = getFullNameWithLog('John', 'Smith');
+//const res = getFullNameWithLog('John', 'Smith');

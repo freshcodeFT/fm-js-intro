@@ -1,21 +1,12 @@
 "use strict";
 
-function test(){
-  console.log(this);
-}
-
-const test2 = function(){
-  console.log(this);
-}
-
-const test3 = () => {
-  console.log(this);
-}
-
-test();
-test2();
-test3();
-
-const obj = {
-  test: test,
+const newsPaper = {
+  title: 'FC daily',
+  articles: ['Test123', 'Something', 'Nothing', 'Everything'],
+  showArticles(){
+    this.articles.forEach(function logItem(item, index){
+      console.log(this);
+      console.log(`${this.title}\n№${index+1}: ${item}`);
+    })
+  }
 }

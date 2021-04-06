@@ -43,6 +43,7 @@ function UserProto(){
   1. Создать прототип для User. 
   2. Создать ф-ю getFullName, которая вернет строку с  именем и фамилией пользователя
   3. Добавить рандомную генерацию подписок (значение поля isSubscribed)
+  4. Получить массив только подписанных совершеннолетних пользователей женского пола. (Array.prototype.filter)
 */
 
 function getRandomUsers(amount) {
@@ -53,7 +54,7 @@ function getRandomUsers(amount) {
         `Name${i}`, //first name
         `Surname${i}`, //last name
         `user${i}@gmail.com`, //email
-        getRandomIntInclusive(12, 50), //age
+        getRandomIntInclusive(10, 50), //age
         getRandomNationality(),
         Math.random() < 0.5, //isMale
         Math.random() < 0.5 //isSubscribed
@@ -65,4 +66,13 @@ function getRandomUsers(amount) {
 
 function getRandomNationality(){
   return NATIONALITIES[getRandomIntInclusive(0,NATIONALITIES.length - 1)];
+}
+
+
+const usersList = getRandomUsers(1000);
+
+function getSubscribedAdultWomen(arr){
+  return arr.filter(function(user){
+    return user.age >= 18 && !user.isMale && user.isSubscribed && user.nationality === 'fr';
+  });
 }

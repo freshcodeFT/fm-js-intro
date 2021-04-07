@@ -1,8 +1,13 @@
 "use strict";
 
-const t1 = function () {
-  console.log(arguments);
-};
+function countDown(num) {
+  //debugger;
+  console.log(num);
+  if (num > 0) {
+    countDown(num - 1); // recursion
+  }
+  return true; // base
+}
 
 const t2 = () => {
   console.log(arguments); // error. arguments is not defined

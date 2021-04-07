@@ -16,6 +16,12 @@ function withLog(fn){
   }
 }
 
+const txt = 'test';
+
+console.log(Number.isNaN(NaN));  //true
+console.log(Number.isNaN(txt)); //false
+console.log(Number.isNaN(Number(txt))); //true
+
 /*const sumWithLog = withLog(sum);
 
 const getFullName = function(name, surname){
@@ -25,18 +31,3 @@ const getFullName = function(name, surname){
 const getFullNameWithLog = withLog(getFullName);*/
 
 //const res = getFullNameWithLog('John', 'Smith');
-
-const num =  +prompt("Write number");
-
-const result = isNaN(num) ? 'Wrong number' : `Number: ${num}`;
-
-
-let res2;
-
-if(isNaN(num)){
-  res2 = 'Wrong number';
-} else {
-  res2 = `Number: ${num}`;
-}
-
-console.log(result);

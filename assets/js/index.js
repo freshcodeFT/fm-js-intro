@@ -9,8 +9,12 @@ function countDown(num) {
   return true; // base
 }
 
-const t2 = () => {
-  console.log(arguments); // error. arguments is not defined
+const power = (num, exp) => {
+  //debugger;
+  if (exp <= 1) {
+    return num; // base
+  }
+  return num * power(num, exp - 1); // recursion
 };
 
 t1(1, 2, 3, 4, 5);

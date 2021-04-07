@@ -17,14 +17,14 @@ const power = (num, exp) => {
   return num * power(num, exp - 1); // recursion
 };
 
-t1(1, 2, 3, 4, 5);
-// t2(1,2,3,4,5)
+const factorial = (n) => (n <= 1 ? 1 : n * factorial(n - 1));
 
-
-const t3 = (a,b,...args) => {
-  console.log(a,b);
-  console.log(...args);
+const factorialIfs = (n) => {
+  if (n <= 1) {
+    return 1;
 }
+  return n * factorial(n - 1);
+};
 
 function sumArgs() {
   let res = null;

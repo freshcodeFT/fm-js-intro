@@ -22,33 +22,23 @@ const factorial = (n) => (n <= 1 ? 1 : n * factorial(n - 1));
 const factorialIfs = (n) => {
   if (n <= 1) {
     return 1;
-}
+  }
   return n * factorial(n - 1);
 };
 
-function sumArgs() {
-  let res = null;
-  for (let i = 0; i < arguments.length; i++) {
-    res += arguments[i];
+const logRange = (min, max) => {
+  //debugger;
+  if(min > max){
+    return false;
   }
-  return res;
+  console.log(min);
+  logRange(min + 1, max);
+  return true;
 }
 
-const sumArrowFE = (...rest) => {
-  let accumulator = null;
-  rest.forEach((currentValue) => {
-    accumulator += currentValue;
-  });
-  return accumulator;
-};
-
-const sumArrowReduce = (...rest) => {
-  return rest.reduce((accumulator, currentValue) => {
-    return accumulator + currentValue;
-  });
-};
-
-const numbers = [1, 1, 32, 15, 122, 1537, 5, 4, 8];
-const numbers2 = [1234, 1324, 43, 4567, 7];
-
-const numbers3 = [...numbers, ...numbers2];
+/*
+Этапы рекурсии:
+  1) Функции вызываются рекурсивно и записываются в call stack
+  2) Доходим до базы
+  3) Функции начнут завершать свою работу
+*/

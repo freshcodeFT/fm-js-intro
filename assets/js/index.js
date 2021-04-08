@@ -18,5 +18,3 @@ const sum = (...args) => {
     return accumulator + currentValue;
   }, 0);
 };
-
-console.log(sum('text',5,15));

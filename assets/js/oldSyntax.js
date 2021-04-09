@@ -16,6 +16,9 @@ function User(name, surname, age){
   this.age = age;
 }
 
+User.isUser = function isUser(user){
+  returns instanceof User
+}
 
 function UserProto(){
   this.getFullName = function(){

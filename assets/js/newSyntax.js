@@ -96,3 +96,59 @@ class FlyingSquirrel extends Squirrel{
 const sq = new Squirrel('Jelly', 'brown');
 
 const fsq = new FlyingSquirrel('Belly', 'black', 20)
+
+class Button {
+  constructor(width, height, color){
+    this.width = width;
+    this.height = height;
+    this.color = color;
+  }
+  render(){}
+}
+
+class WinButton extends Button {
+  constructor(width, height, color){
+    super(width, height, color);
+  }
+  render(){
+    console.log(`Win: ${this.color} button ${this.width}x${this.height}px rendered`)
+  }
+}
+
+class UnixButton extends Button {
+  constructor(width, height, color){
+    super(width, height, color);
+  }
+  render(){
+    console.log(`Unix: ${this.color} button ${this.width}x${this.height}px rendered`)
+  }
+}
+const OS_NAME = 'win';
+
+class ButtonFactory {
+  constructor(width, height, color){
+    this.os = OS_NAME;
+    switch (this.os){
+      case 'win': {
+        this.button = new WinButton(width, height, color);
+        break;
+      }
+      case 'unix': {
+        this.button = new UnixButton(width, height, color);
+      }
+    }
+  }
+}
+
+function createButton(width, height, color){
+  const bf = new ButtonFactory(width, height, color);
+  return bf.button;
+}
+
+
+
+const ubf = new ButtonFactory('unix');
+const wbf = new ButtonFactory('win');
+
+const bf = new ButtonFactory(OS_NAME);
+

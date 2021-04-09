@@ -66,6 +66,33 @@ class Admin extends Moderator {
   }
 }
 
-const u = new User("John", "Smith", 25);
-const m = new Moderator("Bob", "Brown", 30, "MANAGE_CHAT");
-const a = new Admin('Test', 'Testovich',35);
+class Squirrel {
+  constructor(name, color){
+    this.name = name;
+    this.color = color;
+  }
+  eat(){
+    return `${this.name} is eating`;
+  }
+  climb(){
+    return `${this.name} is climbing`;
+  }
+}
+
+class FlyingSquirrel extends Squirrel{
+  constructor(name, color, distance){
+    super(name, color);
+    this.distance = distance;
+  }
+  fly(dist){
+    debugger;
+    if(dist > this.distance){
+      throw new Error('Can`t fly');
+    }
+    return `${this.name} is flying`;
+  }
+}
+
+const sq = new Squirrel('Jelly', 'brown');
+
+const fsq = new FlyingSquirrel('Belly', 'black', 20)

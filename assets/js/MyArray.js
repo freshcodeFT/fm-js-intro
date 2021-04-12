@@ -1,5 +1,5 @@
 class MyArray {
-  constructor(){
+  constructor() {
     this.length = 0;
     for (let i = 0; i < arguments.length; i++) {
       this.push(arguments[i]);
@@ -10,14 +10,14 @@ class MyArray {
       this[this.length++] = arguments[i];
     }
     return this.length;
-  };
+  }
   pop() {
     if (this.length === 0) return;
 
     const lastValue = this[this.length - 1];
     delete this[--this.length];
     return lastValue;
-  };
+  }
   unshift() {
     for (let i = this.length - 1; i >= 0; i--) {
       this[i + arguments.length] = this[i];
@@ -26,7 +26,7 @@ class MyArray {
       this[i] = arguments[i];
     }
     return (this.length += arguments.length);
-  };
+  }
   shift() {
     if (this.length === 0) return;
     const firstElem = this[0];
@@ -35,7 +35,7 @@ class MyArray {
     }
     delete this[--this.length];
     return firstElem;
-  };
+  }
   concat() {
     const newArray = new MyArray();
     for (let i = 0; i < this.length; i++) {
@@ -51,7 +51,7 @@ class MyArray {
       }
     }
     return newArray;
-  };
+  }
   reverse() {
     const maxIndex = this.length - 1;
     const middle = maxIndex / 2;
@@ -61,7 +61,7 @@ class MyArray {
       this[maxIndex - i] = temp;
     }
     return this;
-  };
+  }
   /**
    *
    * @param {function} callback
@@ -70,42 +70,76 @@ class MyArray {
     for (let i = 0; i < this.length; i++) {
       callback(this[i], i, this);
     }
-  };
+  }
   map(callback) {
     const newArray = new MyArray();
     for (let i = 0; i < this.length; i++) {
       newArray.push(callback(this[i], i, this));
     }
     return newArray;
-  };
+  }
   some(callback) {
     for (let i = 0; i < this.length; i++) {
-      if(callback(this[i], i, this)){
+      if (callback(this[i], i, this)) {
         return true;
       }
     }
     return false;
-  };
+  }
   every(callback) {
     for (let i = 0; i < this.length; i++) {
-      if(!callback(this[i], i, this)){
+      if (!callback(this[i], i, this)) {
         return false;
       }
     }
     return true;
-  };
-  filter(callback){
+  }
+  filter(callback) {
     const newArray = new MyArray();
     for (let i = 0; i < this.length; i++) {
-      if(callback(this[i], i, this)){
+      if (callback(this[i], i, this)) {
         newArray.push(this[i]);
       }
     }
     return newArray;
   }
+  flat(depth) {
+    let result = new MyArray();
+
+    /*for (let i = 0; i < this.length; i++) {
+      if (MyArray.isMyArray(this[i]) && depth > 0) {
+        result = result.concat(this[i].flat(depth - 1));
+      } else if (this[i] !== undefined) {
+        result.push(this[i]);
+      }
+    }*/
+
+    this.forEach((item) => {
+      if (MyArray.isMyArray(item) && depth > 0) {
+        result = result.concat(item.flat(depth - 1));
+      } else if (item !== undefined) {
+        result.push(item);
+      }
+    });
+
+    return result;
+  }
   static isMyArray(arr) {
     return arr instanceof MyArray;
-  };
+  }
 }
 
-
+const arr = new MyArray(
+  1,
+  1,
+  1,
+  1,
+  new MyArray(2, 2, 2, 2, new MyArray(3, 3, 3, 3, new MyArray(4, 4, 4, 4))),
+  undefined,
+  undefined,
+  undefined,
+  1,
+  1,
+  1,
+  1
+);

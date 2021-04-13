@@ -128,18 +128,3 @@ class MyArray {
     return arr instanceof MyArray;
   }
 }
-
-const arr = new MyArray(
-  1,
-  1,
-  1,
-  1,
-  new MyArray(2, 2, 2, 2, new MyArray(3, 3, 3, 3, new MyArray(4, 4, 4, 4))),
-  undefined,
-  undefined,
-  undefined,
-  1,
-  1,
-  1,
-  1
-);

@@ -31,7 +31,21 @@ const obj = {
   ['some text']: 'some value',
   [mySymbol1]: 10,
 }
-
+/*
 console.log(obj[5])
 console.log(obj['some text'])
-console.log(obj[mySymbol3])
+console.log(obj[mySymbol3])*/
+
+const arr = [1,2,3,4,5, 'text'];
+for(let i = 0; i < arr.length; i++){
+  console.log(arr[i]);
+}
+
+for (const item of arr){
+  console.log(item);
+}
+
+
+arr.forEach((item) => {
+  console.log(item);
+})

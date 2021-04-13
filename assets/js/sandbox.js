@@ -1,51 +1,13 @@
-class Test {
-  static PI = 3.14
-  static sum(a,b){
-    return a + b;
-  }
-}
+const arr = [1,2,3,4,5];
+const arr2 = ['some','thing'];
+iterator = arr[Symbol.iterator]();
 
-/*
-  string - '' String(), new String()
-  number - numbers, NaN, Infinity, -Infinity, -0, +0, Number(), new Number()
-  BigInt - 50n BigInt(), new BigInt()
-  undefined - undefined
-  null - null
-  bool true, false Boolean(), new Boolean()
-  symbol - ???
-  Object {param: value}, Object(), new Object()
-*/
+const myArr1 = new MyArray(...arr, ...arr2);
 
-const mySymbol1 = Symbol('Symbol.Important');
-const mySymbol3 = Symbol('Symbol.Important');
-const mySymbol2 = Symbol('Просто метка');
+const myArr2 = new MyArray(100,200,300,400);
 
-const keyName = 'some key name';
+const myArr3 = new MyArray(...myArr1, ...myArr2);
 
-const obj = {
-  login: 'testLogin',
-  test: 'something',
-  mySymbol1: 100,
-  [5]: 50,
-  [keyName]: 333,
-  ['some text']: 'some value',
-  [mySymbol1]: 10,
-}
-/*
-console.log(obj[5])
-console.log(obj['some text'])
-console.log(obj[mySymbol3])*/
-
-const arr = [1,2,3,4,5, 'text'];
-for(let i = 0; i < arr.length; i++){
-  console.log(arr[i]);
-}
-
-for (const item of arr){
+for (const item of myArr3){
   console.log(item);
 }
-
-
-arr.forEach((item) => {
-  console.log(item);
-})

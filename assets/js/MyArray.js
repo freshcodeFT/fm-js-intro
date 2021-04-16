@@ -137,6 +137,13 @@ class MyArray {
 
     return result;
   }
+  includes(element, fromIndex = 0) {
+    const startIndex = fromIndex >= 0 ? fromIndex : this.length + fromIndex;
+    for (let i = startIndex; i < this.length; i++){
+      if(this[i] === element) return true;
+    }
+    return false;
+  }
   [Symbol.iterator]() {
     return new MyArrayIterator(this);
   }

@@ -28,3 +28,34 @@ const translate = (str) => {
 };
 
 console.log(translate(inputStr));
+/*
+  Есть 2 объекта с пользователями и 2 массива с их сообщениями.
+  1. Нужно объединить пользователей и их сообщения используя Map.
+  2. Написать функцию, которая принимает пользователя и возвращает его сообщения.
+*/
+const user1 = {
+  id: 1,
+  name: 'John',
+  age: 18,
+};
+const user2 = {
+  id: 2,
+  name: 'Jane',
+  age: 24,
+};
+
+const newUser = {
+  id: 1,
+  name: 'John',
+  age: 18,
+};
+
+
+const johnMsgs = ['2134', 'wsefsef', 'sefsdfsdfsef'];
+const janeMsgs = ['werfsg', 'sdfsdf', 'sdfsdfs', 'sdfsdfsd'];
+
+const usersMap = new Map();
+usersMap.set(user1.id, johnMsgs);
+usersMap.set(user2.id, janeMsgs);
+
+const getUserMsgs = (userId) => usersMap.get(userId);

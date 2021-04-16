@@ -24,6 +24,14 @@ class Queue {
       return lastItem;
     }
   }
+
+  duplicate (){
+    const newQueue = new Queue();
+    for(let i = this._head; i < this._tail; i++){
+      newQueue.push(this[i]);
+    }
+    return newQueue; 
+  }
 }
 
 const q = new Queue();
@@ -41,13 +49,15 @@ mergeQueues(q1,q2)
 
 const mergeQueries = (q1, q2) => {
   const result = new Queue();
+  const tempQ1 = q1.duplicate();
+  const tempQ2 = q2.duplicate();
 
-  while(q1.size || q2.size){
-    if(q1.size !== 0){
-      result.push(q1.pop());
+  while(tempQ1.size || tempQ2.size){
+    if(tempQ1.size !== 0){
+      result.push(tempQ1.pop());
     }
-    if(q2.size !== 0){
-      result.push(q2.pop());
+    if(tempQ2.size !== 0){
+      result.push(tempQ2.pop());
     }
   }
 

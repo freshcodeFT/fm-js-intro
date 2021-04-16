@@ -1,20 +1,22 @@
 "use strict";
 
-// str.split(' ').join(' ')
+const mySymbol = Symbol('test');
 
-/* 
-  Для каждого слова сделать первую буквы большой.
-
-  String.prototype.split
-  String.prototype.toUpperCase
-  Array.prototype.join
-*/
-
-const sum = (...args) => {
-  return args.reduce((accumulator, currentValue) => {
-    if(!Number.isFinite(currentValue)) {
-      throw new TypeError('Wrong argument type');
-    }
-    return accumulator + currentValue;
-  }, 0);
+const obj = {
+  test: 'test',
+  [mySymbol]: 5
 };
+
+const obj2 = {
+  test: 'test',
+  [mySymbol]: 5
+};
+
+const myMap = new Map();
+myMap.set(1, {});
+myMap.set('1', true);
+myMap.set(1, 10000);
+myMap.set(obj, 'testValue');
+myMap.set(obj2, 'anotherValue');
+
+console.log(myMap.get(1));

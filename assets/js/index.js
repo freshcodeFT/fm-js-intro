@@ -1,61 +1,52 @@
 "use strict";
 
-const vocabulary = new Map();
+const nums = [123, 4, 516, 235434, 4556, 88, 413, 782, 343];
 
-vocabulary.set("cat", "кот");
-vocabulary.set("dog", "собака");
-vocabulary.set("table", "стол");
-vocabulary.set("screen", "экран");
-vocabulary.set("structure", "структура");
-vocabulary.set("algorithm", "алгоритм");
-vocabulary.set("count", "считать");
-vocabulary.set("set", "установить");
-vocabulary.set("kernel", "ядро");
-vocabulary.set("queue", "очередь");
-
-const inputStr =
-  "Cat counT Dog set queue Kernel algOrithm strUcTure of the TABLE";
-
-const translate = (str) => {
-  return str
-    .trim()
-    .toLowerCase()
-    .split(" ")
-    .map((word) => {
-      return vocabulary.has(word) ? vocabulary.get(word) : word;
-    })
-    .join(" ");
+const linearSearch = (arr, value) => {
+  // O(n)
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === value) {
+      return i;
+    }
+  }
+  return -1;
 };
 
-console.log(translate(inputStr));
-/*
-  Есть 2 объекта с пользователями и 2 массива с их сообщениями.
-  1. Нужно объединить пользователей и их сообщения используя Map.
-  2. Написать функцию, которая принимает пользователя и возвращает его сообщения.
-*/
-const user1 = {
-  id: 1,
-  name: 'John',
-  age: 18,
-};
-const user2 = {
-  id: 2,
-  name: 'Jane',
-  age: 24,
-};
+const sortedNums = [1,2,3,5,7,9,150, 275, 380];
+// O(log n)
+const binarySearch = (arr, value) => {
+  let start = 0;
+  let end = arr.length - 1;
+  let middle = Math.round((start + end) / 2);
+  //debugger;
+  while(start !== end) {
+    if(arr[middle] === value) {
+      return middle;
+    }
+    /*if(start === end) 
+    {
+      return -1;
+    }*/
+    if (arr[middle] > value){
+      end = middle;
+      middle = Math.floor((start + end) / 2);
+    } else {
+      start = middle;
+      middle = Math.ceil((start + end) / 2);
+    }
+  }
+  return -1;
+}
 
-const newUser = {
-  id: 1,
-  name: 'John',
-  age: 18,
-};
+const createMultiplicationTable = (limit = 10) => {
+  // O(n^2)
 
+  const table = [];
 
-const johnMsgs = ['2134', 'wsefsef', 'sefsdfsdfsef'];
-const janeMsgs = ['werfsg', 'sdfsdf', 'sdfsdfs', 'sdfsdfsd'];
-
-const usersMap = new Map();
-usersMap.set(user1.id, johnMsgs);
-usersMap.set(user2.id, janeMsgs);
-
-const getUserMsgs = (userId) => usersMap.get(userId);
+  for(let i = 1; i <= limit; i++){
+    for (let j = 1; j <= limit; j++){
+      table.push(`${i} * ${j} = ${i * j}`)
+    }
+  }
+  return table;
+}

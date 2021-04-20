@@ -62,11 +62,13 @@ const optinons = {
     '{' : '}',
   },
   isStrict: false,
+  lang: 'ru',
 }
 
-function checkSequence(str, optinons) {
+function checkSequence(str, {braces, ...optinons}) {
+  console.log(braces, optinons);
   const stack = new Stack(str.length);
-  const braces = optinons.braces;
+  //const braces = optinons.braces;
   const closeBraces = Object.values(braces);
   
 
